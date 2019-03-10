@@ -48,7 +48,7 @@ New-FtpUser -Name Username -Password Password -PhysicalPath C:\www
 
 ### 5. Step: Websites
 
-Use these commands to setup websites as you need. Bindings will add http with port 80 bindings. To setup https use installed winacme.
+Use these commands to setup websites as you need. Bindings will add http with port 80.
 
 ```powershell
 - New-WebSite -AppPoolName AppPoolName -SiteName WebsiteName -Host Hostname
