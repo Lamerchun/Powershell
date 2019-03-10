@@ -141,9 +141,6 @@ Function New-WebSite {
         $SiteName, 
 
         [Parameter(Mandatory=$true)]
-        $Path, 
-
-        [Parameter(Mandatory=$true)]
         $HostName
     )
     Import-Module WebAdministration
@@ -152,7 +149,7 @@ Function New-WebSite {
     $manager.ApplicationPools.Add($AppPoolName)
     $manager.CommitChanges()
 
-    $manager.Sites.Add($SiteName, "http", "*:80:$HostName", $Path)
+    $manager.Sites.Add($SiteName, "http", "*:80:$HostName", "C:\www\$SiteName")
     $site = $manager.Sites[$SiteName];
     $site.ApplicationDefaults.ApplicationPoolName = $AppPoolName;
     $manager.CommitChanges()
