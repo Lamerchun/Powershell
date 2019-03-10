@@ -1,6 +1,10 @@
 $_FtpSiteName = "Ftp"
 $_FtpUserGroupName = "Ftp"
 
+Function Show-SpecialChars {
+    echo "Special chars you need: $([char]123) $([char]125)"
+}
+
 Function Install-HetznerDrivers {
     Param(
         [Parameter(Mandatory=$true)]
@@ -267,6 +271,7 @@ Function Show-FE-Help {
     echo ""
 }
 
+#Export-ModuleMember -Function Show-SpecialChars
 #Export-ModuleMember -Function Rename-Server
 #Export-ModuleMember -Function Initialize-Server
 #Export-ModuleMember -Function Install-Features
