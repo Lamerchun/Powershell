@@ -257,7 +257,7 @@ Function Install-FrontendServer {
     New-DefaultWebFtpSite
 }
 
-Function Show-FE-Help {
+Function Show-FST-Help {
     echo "Show-FE-Help"
     echo "============"
     echo ""
@@ -285,5 +285,5 @@ Export-ModuleMember -Function Install-FrontendServer
 Export-ModuleMember -Function New-FtpUser
 Export-ModuleMember -Function New-WebSite
 Export-ModuleMember -Function New-WebSiteBinding
-Export-ModuleMember -Function Show-FE-Help
+Export-ModuleMember -Function Show-FST-Help
 
