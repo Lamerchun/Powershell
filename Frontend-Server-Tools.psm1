@@ -156,7 +156,7 @@ Function New-WebSite {
     $site.ApplicationDefaults.ApplicationPoolName = $AppPoolName;
     $manager.CommitChanges()
 
-    New-Item -type directory -path $Path
+    New-Item -type directory -path $path
 }
 
 Function New-WebSiteBinding {
