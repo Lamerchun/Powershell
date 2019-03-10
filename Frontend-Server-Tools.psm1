@@ -145,11 +145,13 @@ Function New-WebSite {
     )
     Import-Module WebAdministration
 
+    $path = "C:\www\$SiteName"
+
     $manager = Get-IISServerManager
     $manager.ApplicationPools.Add($AppPoolName)
     $manager.CommitChanges()
 
-    $manager.Sites.Add($SiteName, "http", "*:80:$HostName", "C:\www\$SiteName")
+    $manager.Sites.Add($SiteName, "http", "*:80:$HostName", $path)
     $site = $manager.Sites[$SiteName];
     $site.ApplicationDefaults.ApplicationPoolName = $AppPoolName;
     $manager.CommitChanges()
