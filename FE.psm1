@@ -287,5 +287,3 @@ Export-ModuleMember -Function New-WebSite
 Export-ModuleMember -Function New-WebSiteBinding
 Export-ModuleMember -Function Show-FE-Help
 
-cls
-Show-FE-Help
