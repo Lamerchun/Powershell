@@ -65,3 +65,11 @@ Use these commands to setup websites as you need. Bindings will add http with po
 - New-WebSite -AppPoolName AppPoolName -SiteName WebsiteName -Host Hostname
 - New-WebSiteBinding -SiteName WebsiteName -HostName Hostname
 ```
+
+### SSL certificates
+
+Will be issued with letsencrypt. Wacs will automatically renew for you.
+
+```powershell
+New-SslCertificate New-SslCertificate -Email abuse@domain.com -HostName site.domain.com --PhysicalPath C:\www\Website
+```
