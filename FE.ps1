@@ -13,6 +13,12 @@ Function Install-HetznerDrivers {
 	Get-ChildItem "$Source\**\2k16\amd64\*.inf" -Recurse | ForEach-Object { PNPUtil.exe /add-driver $_.FullName /install }
 }
 
+Function Install-WinAcme {
+    curl https://github.com/PKISharp/win-acme/releases/download/v2.0.4.227/win-acme.v2.0.4.227.zip -OutFile winacme.zip
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
+    [System.IO.Compression.ZipFile]::ExtractToDirectory("winacme.zip", "c:\winacme")
+}
+
 Function Rename-Server {
     Param(
         [Parameter(Mandatory=$true)]
@@ -234,8 +240,8 @@ Function Initialize-Server {
 Function Install-Features {
     Uninstall-WindowsDefender
     Install-IisForAspNet
-
     Install-WindowsFeature Web-FTP-Server -IncludeAllSubFeature
+    Install-WinAcme
 }
 
 Function Install-FrontendServer {
