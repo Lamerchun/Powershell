@@ -285,7 +285,7 @@ Export-ModuleMember -Function Install-FrontendServer
 Export-ModuleMember -Function New-FtpUser
 Export-ModuleMember -Function New-WebSite
 Export-ModuleMember -Function New-WebSiteBinding
-Export-ModuleMember -Show-FE-Help
+Export-ModuleMember -Function Show-FE-Help
 
 cls
 Show-FE-Help
