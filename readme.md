@@ -19,8 +19,8 @@ Prepares a clean Windows Server Core for use as a Frontend Server.
 
 ## Conventions
 
-- Your websites go C:\www\
-- Module is installed with git clone in ~\Documents\WindowsPowerShell\Modules\
+- Your websites go `C:\www\`
+- Module is installed with git clone in `~\Documents\WindowsPowerShell\Modules\`
 
 ## Prepare
 
@@ -37,7 +37,7 @@ Install-Script -Name Install-Git -Force
 ### Environment
 
 ```powershell
-Rename-Server -ComputerName `ComputerName` -WorkGroup `WorkgroupName`
+Rename-Server -ComputerName ComputerName -WorkGroup WorkgroupName
 ```
 
 ### Features
@@ -54,14 +54,14 @@ Will configure IIS with defaults. Creates a ftp user with full rights to your we
 
 ```powershell
 Install-FrontendServer
-New-FtpUser -Name `Username` -Password `Password` -PhysicalPath C:\www
+New-FtpUser -Name Username -Password Password -PhysicalPath C:\www
 ```
 
 ### Websites
 
-Use these commands to setup websites as you need. Bindings will add http with port 80 bindings. To setup https use installed wacs at `C:\winacme\`
+Use these commands to setup websites as you need. Bindings will add http with port 80 bindings. To setup https use installed winacme.
 
 ```powershell
-- New-WebSite -AppPoolName `AppPoolName` -SiteName `WebsiteName` -Path C:\www\`WebsiteName` -Host `Hostname`
-- New-WebSiteBinding -SiteName `WebsiteName` -HostName `Hostname`
+- New-WebSite -AppPoolName AppPoolName -SiteName WebsiteName -Host Hostname
+- New-WebSiteBinding -SiteName WebsiteName -HostName Hostname
 ```
