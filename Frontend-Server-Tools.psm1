@@ -16,7 +16,7 @@ Function Install-HetznerDrivers {
 Function Install-WinAcme {
     curl https://github.com/PKISharp/win-acme/releases/download/v2.0.4.227/win-acme.v2.0.4.227.zip -OutFile winacme.zip
     Add-Type -AssemblyName System.IO.Compression.FileSystem
-    [System.IO.Compression.ZipFile]::ExtractToDirectory("winacme.zip", "c:\winacme")
+    Expand-Archive winacme.zip c:\winacme
 }
 
 Function Rename-Server {
