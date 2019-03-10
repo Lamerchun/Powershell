@@ -71,9 +71,8 @@ Function Install-IisForAspNet {
     dism /online /norestart /enable-feature /featurename:IIS-ISAPIExtensions
     dism /online /norestart /enable-feature /featurename:IIS-ISAPIFilter
     dism /online /norestart /enable-feature /featurename:IIS-HttpCompressionStatic
-    dism /online /norestart /enable-feature /featurename:IIS-HttpCompressionDynamic
-    
-    dism /online /enable-feature /all /featurename:IIS-ASPNET45
+    dism /online /norestart /enable-feature /featurename:IIS-HttpCompressionDynamic    
+    dism /online /norestart /enable-feature /featurename:IIS-ASPNET45 /all 
 }
 
 Function Config-DisableIisLogging {
