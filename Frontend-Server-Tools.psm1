@@ -257,26 +257,6 @@ Function Install-FrontendServer {
     New-DefaultWebFtpSite
 }
 
-Function Show-FST-Help {
-    echo "Show-FE-Help"
-    echo "============"
-    echo ""
-    echo "# Start"
-    echo "1. Rename-Server -ComputerName XXX -WorkGroup XXX"
-    echo "2. Initialize-Server"
-    echo "3. Install-Features"
-    echo "4. Restart-Computer -Force"
-    echo ""
-    echo "# After Restart"
-    echo "5. Install-FrontendServer"
-    echo "6. New-FtpUser -Name XXX -Password XXX -PhysicalPath C:\www"
-    echo ""
-    echo "# WebSites"
-    echo "7. New-WebSite -AppPoolName XXX -SiteName XXX -Path C:\www\XXX -Host XXX"
-    echo "8. New-WebSiteBinding -SiteName XXX -HostName XXX"
-    echo ""
-}
-
 Export-ModuleMember -Function Show-SpecialChars
 Export-ModuleMember -Function Rename-Server
 Export-ModuleMember -Function Initialize-Server
