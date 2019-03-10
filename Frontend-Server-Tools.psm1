@@ -54,18 +54,6 @@ Function Config-DisablePasswordComplexity {
 }
 
 Function Install-IisForAspNet {
-    Enable-WindowsOptionalFeature -Online -FeatureName IIS-HttpLogging
-    Enable-WindowsOptionalFeature -Online -FeatureName IIS-LoggingLibraries
-    Enable-WindowsOptionalFeature -Online -FeatureName IIS-RequestMonitor
-    Enable-WindowsOptionalFeature -Online -FeatureName IIS-HttpTracing
-    Enable-WindowsOptionalFeature -Online -FeatureName IIS-Security
-    Enable-WindowsOptionalFeature -Online -FeatureName IIS-RequestFiltering
-    Enable-WindowsOptionalFeature -Online -FeatureName IIS-IPSecurity
-    Enable-WindowsOptionalFeature -Online -FeatureName IIS-Performance
-    Enable-WindowsOptionalFeature -Online -FeatureName IIS-Metabase
-    Enable-WindowsOptionalFeature -Online -FeatureName IIS-BasicAuthentication
-    Enable-WindowsOptionalFeature -Online -FeatureName IIS-LegacyScripts
-
     dism /online /norestart /enable-feature /featurename:IIS-WebServerRole
     dism /online /norestart /enable-feature /featurename:IIS-WebServer
     dism /online /norestart /enable-feature /featurename:IIS-CommonHttpFeatures
