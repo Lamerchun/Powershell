@@ -52,6 +52,7 @@ Use these commands to setup websites as you need. Bindings will add http with po
 
 ```powershell
 - New-WebSite -AppPoolName AppPoolName -SiteName WebsiteName -Host Hostname
+- New-WebSite -AppPoolName AppPoolName -SiteName WebsiteName -Host Hostname -FolderName FolderName
 - New-WebSiteBinding -SiteName WebsiteName -HostName Hostname
 ```
 

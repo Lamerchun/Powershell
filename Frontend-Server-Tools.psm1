@@ -141,11 +141,18 @@ Function New-WebSite {
         $SiteName, 
 
         [Parameter(Mandatory=$true)]
-        $HostName
+        $HostName,
+
+        $FolderName
     )
     Import-Module WebAdministration
 
-    $path = "C:\www\$SiteName"
+    if (!$FolderName)
+    {
+        $FolderName = $SiteName
+    }
+
+    $path = "C:\www\$FolderName"
 
     $manager = Get-IISServerManager
     $manager.ApplicationPools.Add($AppPoolName)
