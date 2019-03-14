@@ -67,7 +67,7 @@ New-SslCertificate -Email abuse@domain.com -HostName site.domain.com --PhysicalP
 
 ### 7. Step: Install MongoDB
 
-MongoDB will be installaed with `cacheSizeGB: 2`.
+MongoDB will be installed with `cacheSizeGB: 2`.
 
 ```powershell
 Install-Mongo -AdminUserName admin -AdminUserPassword PW_XqKwDf9hhT -Port 27017
