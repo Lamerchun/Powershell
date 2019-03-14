@@ -4,12 +4,13 @@ Prepares a clean Windows Server Core for use as a Frontend Server.
 
 ## Installs
 
-`IIS`, `FTP Server`, `ASP.NET`, `git`, `winacme`
+`IIS`, `FTP Server`, `ASP.NET`, `git`, `winacme`, `MongoDB`
 
 ## Conventions
 
-- Your websites go `C:\www\`
-- Module is installed with git clone in `~\Documents\WindowsPowerShell\Modules\Frontend-Server-Tools`
+- Websites go `C:\www\`
+- MongoDB Data go `C:\Data\`
+- Modules are installed with git clone
 
 ## Installation
 
@@ -62,4 +63,19 @@ Will be issued with letsencrypt. Wacs will automatically renew for you.
 
 ```powershell
 New-SslCertificate -Email abuse@domain.com -HostName site.domain.com --PhysicalPath C:\www\Website
+```
+
+### 7. Step: Install MongoDB
+
+MongoDB will be installaed with `cacheSizeGB: 2`.
+
+```powershell
+Install-Mongo -AdminUserName admin -AdminUserPassword PW_XqKwDf9hhT -Port 27017
+Read-MongoLog
+```
+
+If you really need to expose MongoDB to public internet.
+
+```powershell
+New-MongoFirewallRule -Port 27017
 ```

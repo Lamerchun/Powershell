@@ -147,8 +147,7 @@ Function New-WebSite {
     )
     Import-Module WebAdministration
 
-    if (!$FolderName)
-    {
+    if (!$FolderName) {
         $FolderName = $SiteName
     }
 
