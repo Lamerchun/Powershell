@@ -1,4 +1,4 @@
-. \Frontend.ps1
+. .\Frontend.ps1
 
 Export-ModuleMember -Function Show-SpecialChars
 Export-ModuleMember -Function Rename-Server
@@ -10,7 +10,7 @@ Export-ModuleMember -Function New-WebSite
 Export-ModuleMember -Function New-WebSiteBinding
 Export-ModuleMember -Function New-SslCertificate
 
-. \Mongo.ps1
+. .\Mongo.ps1
 
 Export-ModuleMember -Function Install-Mongo
 Export-ModuleMember -Function New-MongoFirewallRule
