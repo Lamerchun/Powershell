@@ -153,8 +153,3 @@ Function Install-Mongo {
   Write-Host "Installation completed."
 }
 
-Export-ModuleMember -Function Install-Mongo
-Export-ModuleMember -Function New-MongoFirewallRule
-Export-ModuleMember -Function Read-MongoLog
-
-

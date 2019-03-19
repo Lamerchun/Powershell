@@ -21,7 +21,7 @@ Install-PackageProvider Nuget -Force
 Install-Module -Name PowerShellGet -Force
 Install-Script -Name Install-Git -Force
 & 'C:\Program Files\WindowsPowerShell\Scripts\Install-Git.ps1'
-& 'C:\Program Files\Git\bin\git.exe' clone https://github.com/Lamerchun/Powershell "$([Environment]::GetFolderPath("User"))\Documents\WindowsPowerShell\Modules\Frontend-Server-Tools"
+& 'C:\Program Files\Git\bin\git.exe' clone https://github.com/Lamerchun/Powershell "$([Environment]::GetFolderPath("User"))\Documents\WindowsPowerShell\Modules\Tools"
 ```
 
 ### 2. Step: Environment
